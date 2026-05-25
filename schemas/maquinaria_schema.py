@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
 from database.models import TipoMaquinariaEnum, EstadoMaquinariaEnum
-from schemas.product_schema import ProductBase
+
 
 
 class MaquinariaBase(BaseModel):
@@ -12,8 +12,8 @@ class MaquinariaBase(BaseModel):
     year:int
     estado: EstadoMaquinariaEnum
 
-class MaquinariaCreate(ProductBase, MaquinariaBase):
-    pass
+class MaquinariaCreate( MaquinariaBase):
+    id_producto: int
 
 class MaquinariaResponse(MaquinariaBase):
     id_maquinaria : int
