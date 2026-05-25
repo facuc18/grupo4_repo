@@ -1,10 +1,15 @@
-# database/config.py
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
 from typing import Generator
 
+from dotenv import load_dotenv
+import os
+
+# Cargar variables de entorno
+load_dotenv()
+
 # Configuración de conexión
-DATABASE_URL = "postgresql://user:password@localhost:5432/agromarket"
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 # Crear engine
 engine = create_engine(

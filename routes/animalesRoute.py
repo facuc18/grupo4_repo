@@ -8,7 +8,7 @@ from fastapi import (
 
 from sqlalchemy.orm import Session
 
-from database.config import get_db
+from core.config import get_db
 
 from database.models import (
     Product,
