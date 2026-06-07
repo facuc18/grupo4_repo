@@ -3,6 +3,9 @@ from sqlalchemy import Boolean, Column, DateTime, ForeignKey, Integer, Numeric
 from database import Base
 
 class Cuota(Base):
+
+    __tablename__ = "cuotas"
+
     id = Column(Integer, primary_key=True)
 
     numero_cuota = Column(

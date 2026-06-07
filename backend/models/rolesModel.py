@@ -3,6 +3,8 @@ from database import Base
 
 class Roles (Base):
 
+    __tablename__ = "roles"
+
     id = Column(Integer, primary_key=True)
 
     nombre = Column(

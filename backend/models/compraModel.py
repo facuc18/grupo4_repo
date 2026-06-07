@@ -4,6 +4,9 @@ from sqlalchemy import Column, DateTime, ForeignKey, Integer, Numeric, String
 from database import Base
 
 class Compra (Base):
+
+    __tablename__ = "compras"
+
     id = Column(Integer, primary_key=True)
 
     fecha_compra = Column(DateTime,default=datetime.utcnow)

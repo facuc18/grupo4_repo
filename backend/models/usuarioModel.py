@@ -5,6 +5,9 @@ from datetime import datetime
 from database import Base
 
 class Usuario(Base):
+
+    __tablename__ = "usuarios"
+
     id = Column(Integer, primary_key=True)
 
     nombre = Column(String(100), nullable=False)

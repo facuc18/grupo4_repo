@@ -4,6 +4,9 @@ from sqlalchemy import Column, DateTime, ForeignKey, Integer, Numeric, String, T
 from database import Base
 
 class Publicacion(Base):
+
+    __tablename__ = "publicaciones"
+
     id = Column(Integer, primary_key=True)
 
     titulo = Column(

@@ -4,6 +4,9 @@ from sqlalchemy import Column, DateTime, ForeignKey, Integer, Numeric, String
 from database import Base
 
 class Leasing(Base):
+
+    __tablename__ = "leassings"
+
     id = Column(Integer, primary_key=True)
 
     fecha_solicitud = Column(DateTime,default=datetime.utcnow)
