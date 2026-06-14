@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, String, Text
+from sqlalchemy.orm import relationship
 from database import Base
 
 class Categoria(Base):
@@ -12,3 +13,5 @@ class Categoria(Base):
     )
 
     descripcion = Column(Text)
+
+    publicaciones = relationship("Publicacion", back_populates="categoria")

@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
 from database import Base
 
 class Roles (Base):
@@ -12,3 +13,4 @@ class Roles (Base):
         nullable=False,
         unique=True
     )
+    usuarios = relationship("Usuario", back_populates="rol")

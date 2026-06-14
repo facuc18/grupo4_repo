@@ -27,6 +27,6 @@ class Cuota(Base):
 
     leasing_id = Column(
         Integer,
-        ForeignKey("leasing.id"),
+        ForeignKey("leassings.id"),
         nullable=False
     )

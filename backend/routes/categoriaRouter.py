@@ -4,9 +4,11 @@ from sqlalchemy.orm import Session
 from models.categoriaModel import Categoria
 from database  import get_db
 
+from schemas.categoriaSchema import CategoriaSchema
+
 router = APIRouter()
 
-@router.get("/categorias")
+@router.get("/categorias", response_model=list[Categoria])
 def get_categorias(db:Session = Depends(get_db)):
     categorias = db.query(Categoria).all()
 
