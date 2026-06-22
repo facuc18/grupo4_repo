@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from sqlalchemy import Column, DateTime, ForeignKey, Integer, Numeric, String, Text
+from sqlalchemy.orm import relationship
 from database import Base
 
 class Publicacion(Base):
@@ -51,3 +52,6 @@ class Publicacion(Base):
         ForeignKey("usuarios.id"),
         nullable=False
     )
+
+    categoria = relationship("Categoria", back_populates="publicaciones")
+    vendedor = relationship("Usuario", back_populates="publicaciones")

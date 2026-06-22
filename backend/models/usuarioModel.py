@@ -18,7 +18,8 @@ class Usuario(Base):
 
     telefono = Column(String(20))
 
-    tipo_usuario = Column(
-        String(20),
-        nullable=False
-    )
+    rol_id = Column(Integer, ForeignKey("roles.id"), nullable=False)
+
+    
+    rol = relationship("Roles", back_populates="usuarios")
+    publicaciones = relationship("Publicacion", back_populates="vendedor")
