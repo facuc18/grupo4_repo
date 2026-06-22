@@ -8,7 +8,7 @@ from schemas.categoriaSchema import CategoriaSchema
 
 router = APIRouter()
 
-@router.get("/categorias", response_model=list[Categoria])
+@router.get("/categorias", response_model=list[CategoriaSchema])
 def get_categorias(db:Session = Depends(get_db)):
     categorias = db.query(Categoria).all()
 

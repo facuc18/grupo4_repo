@@ -106,7 +106,7 @@ def actualizar_publicacion(id: int, publicacion: PublicacionActualizar, db: Sess
     return publicacion_db
 
 
-@router.delete("/publicaciones/{id}", response_model=PublicacionEliminar)
+@router.delete("/publicaciones/{id}", )
 def eliminar_publicacion(id: int, db: Session = Depends(get_db)):
     publicacion_db = db.query(Publicacion).filter(Publicacion.id == id).first()
 
