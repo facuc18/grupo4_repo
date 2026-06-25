@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 # conexión a la base de datos
 import os
 from dotenv import load_dotenv
-from sqlalchemy import create_engine
+
 
 load_dotenv()
 
